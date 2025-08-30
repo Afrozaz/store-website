@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CloudNest Bedding — Premium Beds & Pillows</title>
+  <meta name="description" content="Sleep better with CloudNest: premium orthopedic pillows and cozy beds. Free shipping, easy returns, and a 10‑year warranty." />
+  <meta property="og:title" content="CloudNest Bedding — Premium Beds & Pillows" />
+  <meta property="og:description" content="Sleep better with premium orthopedic pillows and cozy beds." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🛏️</text></svg>">
+  <style>
+    :root{
+      --bg:#0f1220;       /* deep navy */
+      --panel:#101425;    /* card bg */
+      --muted:#8b91a9;    /* text secondary */
+      --text:#e7e9f4;     /* text primary */
+      --brand:#7c5cff;    /* accent */
+      --brand-2:#5ee1a2;  /* accent 2 */
+      --border:#232842;
+      --danger:#ff6b6b;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius-xl: 18px; 
+      --radius-2xl: 28px;
+      --radius-3xl: 40px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(140deg,#0d1020 0%,#0f1326 60%,#12162c 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;border-radius:16px}
+    .container{max-width:1200px;margin:auto;padding:24px}
+    .glass{background:rgba(255,255,255,.04);backdrop-filter: blur(10px);border:1px solid var(--border);box-shadow:var(--shadow)}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(16,20,37,.65);backdrop-filter:saturate(1.2) blur(12px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .logo .mark{height:38px;width:38px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),#9b86ff)}
+    .logo small{display:block;color:var(--muted);font-weight:500;letter-spacing:.3px}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu a{padding:10px 14px;border-radius:12px;color:var(--muted)}
+    .menu a:hover{background:rgba(124,92,255,.1);color:#fff}
+    .cta{display:flex;align-items:center;gap:12px}
+    .btn{padding:12px 16px;border-radius:14px;border:1px solid var(--border);background:var(--panel);cursor:pointer;color:#fff;font-weight:600}
+    .btn:hover{transform:translateY(-1px);}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),#9b86ff);border:0}
+    .btn-outline{background:transparent;border:1px solid var(--border);color:#fff}
+    .mobile-toggle{display:none}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;margin-top:24px}
+    .hero .tag{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(94,225,162,.12);border:1px solid rgba(94,225,162,.35);color:#d6ffe9;font-weight:600}
+    .hero h1{font-size:clamp(32px,5vw,56px);line-height:1.05;margin:16px 0}
+    .hero p{color:var(--muted);font-size:18px}
+    .hero-actions{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+    .hero .image{position:relative;border-radius:var(--radius-3xl);overflow:hidden}
+    .hero .image:after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 70% 30%,rgba(124,92,255,.3),transparent 60%)}
+
+    /* Feature badges */
+    .badges{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+    .badge{padding:14px 16px;border-radius:16px;border:1px dashed var(--border);color:var(--muted);display:flex;align-items:center;gap:12px}
+
+    /* Products */
+    .section{margin:56px 0}
+    .section h2{font-size:clamp(24px,3.6vw,34px);margin:0 0 6px}
+    .section p.lead{color:var(--muted);margin:0 0 24px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{border-radius:var(--radius-xl);padding:16px;border:1px solid var(--border);background:var(--panel);position:relative}
+    .price{font-weight:800;font-size:20px}
+    .rating{color:#ffd269}
+    .card .actions{display:flex;gap:10px;margin-top:12px}
+
+    /* Testimonials */
+    .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    blockquote{padding:18px;border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.03);font-style:italic}
+
+    /* FAQ */
+    .faq{max-width:900px}
+    details{border:1px solid var(--border);border-radius:14px;padding:14px;background:rgba(255,255,255,.03)}
+    details + details{margin-top:12px}
+    summary{cursor:pointer;font-weight:700}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input,textarea,select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:#0c0f1e;color:#fff}
+    label{font-weight:600}
+
+    /* Footer */
+    footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr}
+      .badges{grid-template-columns:repeat(2,1fr)}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .quotes{grid-template-columns:1fr 1fr}
+      .menu{display:none}
+      .mobile-toggle{display:inline-flex}
+    }
+    @media (max-width: 640px){
+      .grid{grid-template-columns:1fr}
+      .quotes{grid-template-columns:1fr}
+    }
+
+    /* Tiny helpers */
+    .pill{padding:.35rem .6rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);font-size:12px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header role="banner">
+    <div class="container nav">
+      <a class="logo" href="#" aria-label="CloudNest Home">
+        <span class="mark">🛏️</span>
+        <span>CloudNest<br><small>Beds • Pillows • Comfort</small></span>
+      </a>
+      <nav class="menu" aria-label="Primary">
+        <a href="#products">Shop</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="cta">
+        <button class="btn btn-outline" aria-label="Cart" id="cartBtn">🧺 <span class="pill" id="cartCount">0</span></button>
+        <button class="btn btn-primary">Shop Now</button>
+        <button class="btn mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="container hidden">
+      <nav class="glass" style="border-radius:14px;padding:12px;display:grid;gap:8px">
+        <a href="#products">Shop</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="tag">🌿 Eco‑friendly • Orthopedic Support • 10‑year Warranty</span>
+        <h1>Sleep better with premium <span style="background:linear-gradient(135deg,var(--brand-2),#b9ffd7);-webkit-background-clip:text;background-clip:text;color:transparent">beds & pillows</span>.</h1>
+        <p>We blend cloud‑soft comfort with science‑backed ergonomics. Free shipping across India and 30‑night risk‑free trials.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#products">Shop Pillows</a>
+          <a class="btn" href="#products">Shop Beds</a>
+          <a class="pill" href="#about">Why CloudNest?</a>
+        </div>
+        <div class="badges">
+          <div class="badge">🌱 Plant‑based foam</div>
+          <div class="badge">😴 Orthopedic support</div>
+          <div class="badge">🚚 Free shipping</div>
+          <div class="badge">↩️ 30‑night trial</div>
+        </div>
+      </div>
+      <div class="image glass">
+        <img alt="Cozy bed with pillows" src="https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=1200&auto=format&fit=crop" />
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="section">
+      <h2>Best Sellers</h2>
+      <p class="lead">Thoughtfully designed for spinal alignment and all‑night comfort.</p>
+      <div class="grid">
+        <!-- Pillow 1 -->
+        <article class="card" itemscope itemtype="https://schema.org/Product">
+          <img src="https://images.unsplash.com/photo-1582582429416-e9c46f3b7b04?q=80&w=1200&auto=format&fit=crop" alt="Orthopedic Memory Foam Pillow" itemprop="image">
+          <h3 itemprop="name">Ortho Memory Foam Pillow</h3>
+          <p class="rating" aria-label="Rated 4.8 out of 5">★★★★★ 4.8</p>
+          <p itemprop="description">Contours to your neck and shoulders for pressure relief.</p>
+          <p class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="INR">₹</span><span itemprop="price">1,999</span></p>
+          <div class="actions">
+            <button class="btn btn-primary addToCart" data-name="Ortho Memory Foam Pillow" data-price="1999">Add to Cart</button>
+            <button class="btn">Details</button>
+          </div>
+        </article>
+        <!-- Pillow 2 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1582582494700-6c88c7ed9d68?q=80&w=1200&auto=format&fit=crop" alt="Cooling Gel Pillow">
+          <h3>Cooling Gel Pillow</h3>
+          <p class="rating">★★★★☆ 4.5</p>
+          <p>Stay cool all night with phase‑change fabric cover.</p>
+          <p class="price">₹1,799</p>
+          <div class="actions">
+            <button class="btn btn-primary addToCart" data-name="Cooling Gel Pillow" data-price="1799">Add to Cart</button>
+            <button class="btn">Details</button>
+          </div>
+        </article>
+        <!-- Bed 1 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2c56d?q=80&w=1200&auto=format&fit=crop" alt="Hybrid Orthopedic Mattress">
+          <h3>Hybrid Orthopedic Mattress</h3>
+          <p class="rating">★★★★★ 4.9</p>
+          <p>7‑zone support with breathable bamboo cover.</p>
+          <p class="price">₹14,999</p>
+          <div class="actions">
+            <button class="btn btn-primary addToCart" data-name="Hybrid Orthopedic Mattress" data-price="14999">Add to Cart</button>
+            <button class="btn">Details</button>
+          </div>
+        </article>
+        <!-- Bed 2 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1536353285727-9b1d692f2e1f?q=80&w=1200&auto=format&fit=crop" alt="Solid Wood Bed Frame">
+          <h3>Solid Wood Bed Frame</h3>
+          <p class="rating">★★★★☆ 4.6</p>
+          <p>Squeak‑free joinery with rounded edges and walnut finish.</p>
+          <p class="price">₹11,999</p>
+          <div class="actions">
+            <button class="btn btn-primary addToCart" data-name="Solid Wood Bed Frame" data-price="11999">Add to Cart</button>
+            <button class="btn">Details</button>
+          </div>
+        </article>
+        <!-- Pillow 3 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1601968177507-a5e8f1f57c0e?q=80&w=1200&auto=format&fit=crop" alt="Latex Cloud Pillow">
+          <h3>Latex Cloud Pillow</h3>
+          <p class="rating">★★★★☆ 4.4</p>
+          <p>Responsive natural latex with perforated airflow channels.</p>
+          <p class="price">₹2,299</p>
+          <div class="actions">
+            <button class="btn btn-primary addToCart" data-name="Latex Cloud Pillow" data-price="2299">Add to Cart</button>
+            <button class="btn">Details</button>
+          </div>
+        </article>
+        <!-- Bed 3 -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1200&auto=format&fit=crop" alt="Upholstered Storage Bed">
+          <h3>Upholstered Storage Bed</h3>
+          <p class="rating">★★★★☆ 4.5</p>
+          <p>Lift‑up hydraulic storage with soft, durable fabric.</p>
+          <p class="price">₹18,499</p>
+          <div class="actions">
+            <button class="btn btn-primary addToCart" data-name="Upholstered Storage Bed" data-price="18499">Add to Cart</button>
+            <button class="btn">Details</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section glass" style="border-radius:24px;padding:24px">
+      <h2>Why CloudNest?</h2>
+      <p class="lead">We engineer products with chiropractors and sleep scientists. Every material is traceable, certified, and designed to last.</p>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr)">
+        <div class="card"><h3>Spinal Alignment</h3><p>Our pillows keep your head neutral and relieve neck strain.</p></div>
+        <div class="card"><h3>Breathable & Cool</h3><p>Bamboo covers + open‑cell foams = less heat, more Zzz.</p></div>
+        <div class="card"><h3>Sustainable</h3><p>Plant‑based foams, FSC wood, and recyclable packaging.</p></div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+      <h2>Loved by thousands</h2>
+      <div class="quotes">
+        <blockquote>“Neck pain gone in a week. The Ortho pillow changed my mornings!” — Asha R.</blockquote>
+        <blockquote>“Best sleep in years. Mattress is supportive yet plush.” — Vikram S.</blockquote>
+        <blockquote>“Fast delivery and premium feel. Worth every rupee.” — Sana K.</blockquote>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Which pillow is right for me?</summary>
+        <p>Side sleepers: Ortho Memory Foam. Back sleepers: Latex Cloud. Hot sleepers: Cooling Gel.</p>
+      </details>
+      <details>
+        <summary>Do you ship across India?</summary>
+        <p>Yes, free shipping to most PIN codes. Delivery in 2–7 business days.</p>
+      </details>
+      <details>
+        <summary>What is the trial & return policy?</summary>
+        <p>30‑night trial on pillows, 100‑night on mattresses. Easy doorstep pickup for returns.</p>
+      </details>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section glass" style="border-radius:24px;padding:24px">
+      <h2>Contact Us</h2>
+      <p class="lead">Have a question or bulk inquiry? Send us a message.</p>
+      <form name="contact" onsubmit="sendMessage(event)">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" required placeholder="Your full name" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" required type="email" placeholder="you@example.com" />
+          </div>
+        </div>
+        <div>
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic">
+            <option>General</option>
+            <option>Order Support</option>
+            <option>Bulk / B2B</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="How can we help?" required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Send Message</button>
+        <small id="formNote" style="display:block;color:var(--muted);margin-top:8px">(This demo uses a mailto: link. Replace with Formspree/Netlify when deploying.)</small>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>© <span id="year"></span> CloudNest Bedding</div>
+      <div style="display:flex;gap:14px">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Returns</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="glass" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);opacity:0;transition:all .3s;display:flex;gap:10px;align-items:center;padding:12px 16px;border-radius:12px">
+    <span>🧺 Added to cart!</span>
+  </div>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    yearEl.textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileToggle.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden') === false;
+      mobileToggle.setAttribute('aria-expanded', String(open));
+    });
+
+    // Cart interactions (demo)
+    const cartBtn = document.getElementById('cartBtn');
+    const cartCount = document.getElementById('cartCount');
+    const toast = document.getElementById('toast');
+    let count = 0;
+    function showToast(msg){
+      toast.firstElementChild.textContent = msg;
+      toast.style.opacity = '1';
+      toast.style.transform = 'translateX(-50%) translateY(0)';
+      setTimeout(()=>{
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(-50%) translateY(20px)';
+      }, 1500);
+    }
+    document.querySelectorAll('.addToCart').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        count++;
+        cartCount.textContent = count;
+        showToast('🧺 Added to cart!');
+      })
+    });
+
+    cartBtn.addEventListener('click',()=>{
+      showToast(`Cart has ${count} item${count===1?'':'s'}. (Demo only)`);
+    });
+
+    // Contact form (demo via mailto)
+    function sendMessage(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const topic = document.getElementById('topic').value;
+      const message = document.getElementById('message').value;
+      const body = encodeURIComponent(`From: ${name} <${email}>\nTopic: ${topic}\n\n${message}`);
+      window.location.href = `mailto:hello@cloudnest.example?subject=Website%20Contact&body=${body}`;
+      showToast('✉️ Opening your mail app…');
+    }
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CloudNest Bedding",
+    "url": "https://example.com",
+    "logo": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+    "sameAs": ["https://www.instagram.com/"],
+    "brand": {
+      "@type": "Brand",
+      "name": "CloudNest"
+    }
+  }
+  </script>
+</body>
+</html>
